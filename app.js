@@ -1,4 +1,6 @@
 require('dotenv').config()
+// eslint-disable-next-line no-undef
+var port = process.env.PORT || 8080;
 
 var express = require("express"),
     app = express(),
@@ -53,6 +55,7 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds/:id/reviews", reviewRoutes);
 
-app.listen(3000, function () {
+
+app.listen(port, function () {
     console.log("The YelpCamp Server Has Started!");
 });
